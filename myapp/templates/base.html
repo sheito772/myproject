@@ -89,7 +89,7 @@
                        class="text-white">パスワードのリセット</a></li>
                 <li><a href="mailto:admin@example.com"
                        class="text-white">Email me</a></li>
-                <li><a href="{% url 'myapp:mail' %}">お問い合わせ</a></li>
+                <li><a href="{% url 'myapp:mail' %}" class="text-white">お問い合わせ</a></li>
                 {% else %}
                 <!-- ログイン状態ではない場合のメニュー-->
                 <li><a href="{% url 'accounts:signup' %}"

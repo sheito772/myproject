@@ -4,18 +4,10 @@ from django.urls import path, include # include追加
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 # staticを追加
-from rest_framework import routers
 from django.conf.urls.static import static
-from ranking.views import UserViewSet, ScoreViewSet
-
-router = routers.DefaultRouter()
-router.register(r'users', UserViewSet)
-router.register(r'scores', ScoreViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-    path('score/', include(router.urls)),
 
     path('slide/', include('slide.urls')),
 

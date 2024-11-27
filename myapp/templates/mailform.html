@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+        <!-- Main Content-->
+        {% block contents %}
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <strong>カテゴリの追加やサイトに関するお問い合わせをお寄せください。</strong>
+                        {% if massages %}
+                        <ul class="list-unstyled" style="list-style: none;">
+                            {% for massage in massages %}
+                            <li {% if massage.tags %} class="{{ massage.tags }}" {% endif %}>
+                                {{ massage }}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        <div class="my-5">
+                            <form method="post">
+                                {% csrf_token %}
+                                {% for field in form %}
+                                    <div class="form-floating">
+                                        <div class="form-group floating-label-form-group controls">
+                                            {{ field.label_tag }}
+                                            <!---->
+                                            {{ field }}
+                                            <p class="help-block text-banger"></p>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                                <br>
+                                <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        {% endblock %}

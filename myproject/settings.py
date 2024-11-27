@@ -42,8 +42,6 @@ INSTALLED_APPS = [
     'myapp.apps.MyappConfig',
     # accountsアプリを追加する
     'accounts.apps.AccountsConfig',
-    'ranking',
-    'rest_framework.apps.RestFrameworkConfig',
     'slide.apps.SlideConfig',
     'aisatu.apps.AisatuConfig'
 ]

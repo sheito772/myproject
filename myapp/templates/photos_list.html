@@ -41,7 +41,7 @@ onclick="location.href='{% url 'myapp:photos_cat' category=record.category.id %}
                           {{record.category.title}}</button>
                 </div>
                 <!-- 投稿したユーザー名を出力-->
-                <a href="{% url 'photo:user_list' user=record.user.id %}">
+                <a href="{% url 'myapp:user_list' user=record.user.id %}">
                   <small class="text-muted">
                     {{record.user.username}}</small>
                 </a>
